@@ -12,7 +12,8 @@ public class AIPreviewer : PropertyDrawer
     {
         if (GUI.Button(position, "Open Behavior Tree Preview"))
         {
-            BehaviorTree behavior = property.GetPropertyData<BehaviorTree>();
+            // TODO: Fix workaround by deriving BehaviorTree from ScriptableObject
+            BehaviorTree behavior = property.objectReferenceValue as System.Object as BehaviorTree;
             AIPreviewWindow.Launch(behavior);
         }
     }

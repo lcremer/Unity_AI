@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Reflection;
-using Assets.Project.Source.Common.Utility;
-using Assets.Project.Source.Controllers;
+//using Assets.Project.Source.Common.Utility;
+//using Assets.Project.Source.Controllers;
 using BehaviorLibrary;
 using BehaviorLibrary.Components;
 using BehaviorLibrary.Components.Conditionals;
@@ -67,7 +67,7 @@ public class AIPreviewWindow : EditorWindow
         }
         if (y != topNode.Position.y)
         {
-            y = y + 35;    
+            y = y + 35;
         }
 
         topNode.Position = new Vector2(topNode.Position.x, y);
@@ -109,7 +109,7 @@ public class AIPreviewWindow : EditorWindow
     void OnGUI()
     {
         DrawGraphGUI();
-        
+
         BeginWindows();
         for (int i = 0; i < nodes.Count; i++)
         {
@@ -117,7 +117,7 @@ public class AIPreviewWindow : EditorWindow
             {
                 nodes[i].OnGUI();
             }
-            
+
         }
 
         if (Behavior != null && Behavior.UpdateAIPreviewer)
@@ -130,7 +130,7 @@ public class AIPreviewWindow : EditorWindow
                 GetSelectedNodeFields();
                 SelectedNode = GUILayout.Window(2, new Rect(10, 10, 150, 10), DrawNodeSelected, BehaviorNode.Selection.BehaviorComponent.Name);
             }
-    
+
             for (int i = 0; i < Behavior.History.Count; i++)
             {
                 Behavior.History[i].Node.OnHistoryGUI();
@@ -248,7 +248,7 @@ public class AIPreviewWindow : EditorWindow
                 GUILayout.Label("Conditional Body: " + conditional.Expression);
                 GUILayout.Label("Conditional Not Using Action Constructor for Debugging");
             }
-            
+
         }
         else
         {
@@ -263,7 +263,7 @@ public class AIPreviewWindow : EditorWindow
                     GUILayout.Label("Value: " + value);
                 }
 
-            } 
+            }
         }
         component.NotifyOnExecute = GUILayout.Toggle(component.NotifyOnExecute, "Notify On Execute");
         GUILayout.EndVertical();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
-using Assets.Project.Source.UI;
+//using Assets.Project.Source.UI;
 using UnityEngine;
 using Object = System.Object;
 
@@ -12,13 +12,13 @@ namespace BehaviorLibrary.Components.Conditionals
     public class ConditionalLambda : BehaviorComponent
     {
         #if UNITY_EDITOR
-        public Expression<Func<bool>> Expression; 
+        public Expression<Func<bool>> Expression;
         public Action<ConditionalLambda> TestAction;
         public List<Object> ExpressionObjects = new List<object>();
         public string ConditionalDescription;
         #endif
 
-        public Func<bool> TestFunc;       
+        public Func<bool> TestFunc;
         public bool Result;
 
 
@@ -59,7 +59,7 @@ namespace BehaviorLibrary.Components.Conditionals
                 Result = TestFunc.Invoke();
             }
             #endif
-            
+
             #if UNITY_EDITOR
             if (Expression != null)
             {
