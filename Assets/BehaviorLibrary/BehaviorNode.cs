@@ -1,11 +1,6 @@
-﻿using System.Net.Configuration;
-using BehaviorLibrary;
-using BehaviorLibrary.Components;
+﻿using BehaviorLibrary;
 using UnityEngine;
 using UnityEditor;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 public class BehaviorNode
 {
@@ -136,7 +131,7 @@ public class BehaviorNode
 
         switch (Event.current.type)
         {
-            case EventType.mouseDown:  
+            case EventType.mouseDown:
                 break;
             case EventType.mouseUp:
                 if (nodeRect.Contains(Event.current.mousePosition))
@@ -179,7 +174,7 @@ public class BehaviorNode
                 style.alignment = TextAnchor.MiddleCenter;
                 style.Draw(nodeRect, content, 0);
                 GUI.skin.box.Draw(nodeRect, new GUIContent(), false, false, false, false);
-                
+
                 break;
         }
 

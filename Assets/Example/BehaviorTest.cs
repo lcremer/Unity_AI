@@ -1,7 +1,4 @@
 ﻿using BehaviorLibrary;
-using BehaviorLibrary.Components.Actions;
-using BehaviorLibrary.Components.Composites;
-using BehaviorLibrary.Components.Conditionals;
 using UnityEngine;
 
 public class BehaviorTest : MonoBehaviour
@@ -29,7 +26,7 @@ public class BehaviorTest : MonoBehaviour
     {
         //if (Vector3.Distance(transform.position, Target.transform.position) <= SightDistance)
         //{
-        //    Debug.Log("Can see target");    
+        //    Debug.Log("Can see target");
         //}
         return Vector3.Distance(transform.position, Target.transform.position) <= SightDistance;
     }
@@ -38,7 +35,7 @@ public class BehaviorTest : MonoBehaviour
     {
         //if (Vector3.Distance(transform.position, Target.transform.position) <= FollowDistance)
         //{
-        //    Debug.Log("too close to target");    
+        //    Debug.Log("too close to target");
         //}
         return Vector3.Distance(transform.position, Target.transform.position) <= FollowDistance;
     }
@@ -92,7 +89,7 @@ public class BehaviorTest : MonoBehaviour
         BAction getPatrolPoint = new BAction(GetRandomPatrolPoint);
         BAction goToPatrolPoint = new BAction(GoToPatrolPoint);
         BAction circleTarget = new BAction(CircleTarget);
-        
+
         SequenceContinued checkIfShouldCircle = new SequenceContinued(tooCloseToTarget, circleTarget);
         //If too circle target, if not follow Target
         SelectorContinued following = new SelectorContinued(checkIfShouldCircle, followTarget);
@@ -119,9 +116,7 @@ public class BehaviorTest : MonoBehaviour
     {
         if (CanBehave && behavior != null)
         {
-            behavior.Behave(); 
+            behavior.Behave();
         }
     }
-
-
 }

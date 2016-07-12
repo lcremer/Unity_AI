@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-//using Assets.Project.Source.UI;
-using UnityEngine;
 using Object = System.Object;
 
-namespace BehaviorLibrary.Components.Conditionals
+namespace BehaviorLibrary
 {
     public class ConditionalLambda : BehaviorComponent
     {

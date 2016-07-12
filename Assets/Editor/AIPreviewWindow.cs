@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Linq.Expressions;
 using System.Reflection;
-//using Assets.Project.Source.Common.Utility;
-//using Assets.Project.Source.Controllers;
 using BehaviorLibrary;
-using BehaviorLibrary.Components;
-using BehaviorLibrary.Components.Conditionals;
 using UnityEditor;
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-using Object = System.Object;
 
 public class AIPreviewWindow : EditorWindow
 {

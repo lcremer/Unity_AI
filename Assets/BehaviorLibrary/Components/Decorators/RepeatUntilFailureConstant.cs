@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-
-namespace BehaviorLibrary.Components.Decorators
+﻿namespace BehaviorLibrary
 {
     /// <summary>
     /// Repeats Behavior in single execution till failure or max iteration is met

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 
-namespace BehaviorLibrary.Components.Conditionals
+namespace BehaviorLibrary
 {
     public class ConditionalGameObjectDistance : BehaviorComponent
     {
@@ -58,7 +55,7 @@ namespace BehaviorLibrary.Components.Conditionals
         public override Status Execute()
         {
             AddToHistory(this);
-            
+
             switch (Test())
             {
                 case true:

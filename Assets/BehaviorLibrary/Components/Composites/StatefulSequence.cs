@@ -1,7 +1,3 @@
-using System;
-using BehaviorLibrary.Components;
-using UnityEngine;
-
 namespace BehaviorLibrary
 {
     public class StatefulSequence : BehaviorComponent

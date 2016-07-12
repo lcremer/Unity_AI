@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
 
-namespace BehaviorLibrary.Components.Actions
+namespace BehaviorLibrary
 {
     public class BAction : BehaviorComponent
     {
@@ -28,7 +24,7 @@ namespace BehaviorLibrary.Components.Actions
 
         public override Status Execute()
         {
-            AddToHistory(this);   
+            AddToHistory(this);
             switch (Action.Invoke())
             {
                 case Status.Success:

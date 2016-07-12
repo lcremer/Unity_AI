@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-
-namespace BehaviorLibrary.Components.Decorators
+﻿namespace BehaviorLibrary
 {
     public class Inverter : BehaviorComponent
     {
 
-        public Inverter(BehaviorComponent behavior) 
+        public Inverter(BehaviorComponent behavior)
         {
             AssignBehaviors(new[] { behavior });
             Name = "Inverter";

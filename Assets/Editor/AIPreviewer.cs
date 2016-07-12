@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using BehaviorLibrary.Components.Composites;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 using BehaviorLibrary;
-using System.Reflection;
 
 [CustomPropertyDrawer(typeof(BehaviorTree))]
 public class AIPreviewer : PropertyDrawer

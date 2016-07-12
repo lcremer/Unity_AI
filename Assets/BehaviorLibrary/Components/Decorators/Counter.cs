@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-
-namespace BehaviorLibrary.Components.Decorators
-{   
+﻿namespace BehaviorLibrary
+{
     /// <summary>
     /// Will not Execute behavior till max iterations are met
     /// </summary>

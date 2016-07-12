@@ -1,8 +1,5 @@
 using System;
 using System.Collections.Generic;
-using BehaviorLibrary.Components;
-using BehaviorLibrary.Components.Decorators;
-using BehaviorLibrary.Components.Composites;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
@@ -25,7 +22,7 @@ namespace BehaviorLibrary
         public Func<bool> CheckIfUpdateNeeded;
 
         public List<BehaviorComponent> History;
-        public Dictionary<string, Alterable> AlterableComponents; 
+        public Dictionary<string, Alterable> AlterableComponents;
 
         public BehaviorComponent Root;
 

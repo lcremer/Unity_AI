@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
 
-namespace BehaviorLibrary.Components.Composites
+namespace BehaviorLibrary
 {
     public class SelectorRandom : BehaviorComponent
     {
         private System.Random random = new System.Random(DateTime.Now.Millisecond);
 
-        public SelectorRandom(params BehaviorComponent[] behaviors) 
+        public SelectorRandom(params BehaviorComponent[] behaviors)
         {
             AssignBehaviors(behaviors);
             Name = "RandomSelector";
