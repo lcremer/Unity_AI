@@ -15,7 +15,7 @@ namespace BehaviorLibrary
     public delegate Status BehaviorReturn();
 
     [Serializable]
-    public class BehaviorTree
+    public class BehaviorTree : ScriptableObject
     {
         public Action<BehaviorTree> BehaviorTreeUpdated;
 
@@ -38,10 +38,15 @@ namespace BehaviorLibrary
 
         public BehaviorTree(BehaviorComponent root)
         {
+            Init( root );
+        }
+
+        public void Init(BehaviorComponent root)
+        {
             Root = root;
             History = new List<BehaviorComponent>();
             AlterableComponents = new Dictionary<string, Alterable>();
-            SetupHistoryCallBackAndAlterable(Root);
+            SetupHistoryCallBackAndAlterable( Root );
         }
 
         public Status Behave()

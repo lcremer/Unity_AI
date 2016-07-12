@@ -10,7 +10,7 @@ public class BehaviorTest : MonoBehaviour
     public float PatrolRadius;
     public bool CanBehave;
 
-    private BehaviorTree behavior;
+    public BehaviorTree behavior;
 
     private Vector3 patrolPoint;
     private float updateTick;
@@ -103,7 +103,8 @@ public class BehaviorTest : MonoBehaviour
         SelectorBranch root = new SelectorBranch(switchBehaviors, lookForTarget);
 
         //set a reference to the root
-        behavior = new BehaviorTree(root);
+        behavior = ScriptableObject.CreateInstance<BehaviorTree>();
+        behavior.Init( root );
         CanBehave = true;
     }
 
