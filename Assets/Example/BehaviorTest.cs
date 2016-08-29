@@ -77,7 +77,7 @@ public class BehaviorTest : MonoBehaviour
     }
     #endregion
 
-    //Run this on awake or enable or start
+    //Run this on awake, enable, or start
     public void DefineBehavior()
     {
         //Conditions
