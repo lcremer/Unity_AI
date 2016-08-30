@@ -1,4 +1,4 @@
-# Unity_AI AI Behavior Tree Framework
+#AI Behavior Tree Framework
 
 Create Behavior Trees in C#, No GUI. Preview behavior tree in realtime.
 I wanted something that would let me quickly define and create behavior tree nodes how I wanted, something fairly lightweight.
