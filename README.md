@@ -14,3 +14,7 @@ Tree Execution Speed Adjustment (Tree nodes are acted on so quickly it may be ha
 Collapsable Branches
 Node Logging
 Utility Curve Selectors
+
+Examples of the Tree Previewer in Unity 5:
+https://github.com/lcremer/Unity_AI/blob/master/Misc/BehaviorTree1.PNG
+https://github.com/lcremer/Unity_AI/blob/master/Misc/BehaviorTree2.PNG
