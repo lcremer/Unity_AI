@@ -95,16 +95,17 @@ public class BehaviorNode
                 //}
                 break;
             case EventType.repaint:
-                DrawBox(nodeRect, new Color(.5f, .5f, .5f, .5f));
+                DrawBox(nodeRect, new Color(0.65f, 0.65f, 0.65f, .65f));
                 GUIContent content = new GUIContent(BehaviorComponent.Name);
                 GUIStyle style = new GUIStyle();
+                style.fontStyle = FontStyle.BoldAndItalic;
                 style.alignment = TextAnchor.MiddleCenter;
                 style.Draw(nodeRect, content, 0);
                 GUI.skin.box.Draw(nodeRect, new GUIContent(), false, false, false, false);
                 break;
         }
 
-        GUI.color = new Color(1,1,1);
+        GUI.color = new Color(.5f,.5f,.5f, .65f);
         if (TopNode != null)
         {
             Color color = Color.gray;
@@ -114,11 +115,11 @@ public class BehaviorNode
 
     public void OnHistoryGUI()
     {
-        Color color = new Color();
+        Color color = new Color(0.05f, 0.05f, 0.05f, .65f);
 
         if (BehaviorComponent.Status == Status.Running)
         {
-            color = new Color(0, 0 , 1,.65f);
+            color = new Color(0, 0 , 1, .65f);
         }
         if (BehaviorComponent.Status == Status.Success)
         {

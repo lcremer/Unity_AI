@@ -22,10 +22,9 @@ public class AIPreviewWindow : EditorWindow
     private static Rect History;
     private static Rect SelectedNode;
 
-    #region Selected Node Properties
+    // Selected Node Properties
     private Type type;
     private FieldInfo[] fields;
-    #endregion
 
     public static void Launch(BehaviorTree behaviour)
     {
@@ -35,7 +34,7 @@ public class AIPreviewWindow : EditorWindow
         y = 60;
         Behavior = behaviour;
         Behavior.BehaviorTreeUpdated = Launch;
-        GetWindow<AIPreviewWindow>().title = "Behavior Tree Previewer";
+        GetWindow<AIPreviewWindow>().titleContent.text = "Behavior Tree Previewer";
         GetNodes();
     }
 
@@ -124,9 +123,9 @@ public class AIPreviewWindow : EditorWindow
                 SelectedNode = GUILayout.Window(2, new Rect(10, 10, 150, 10), DrawNodeSelected, BehaviorNode.Selection.BehaviorComponent.Name);
             }
 
-            for (int i = 0; i < Behavior.History.Count; i++)
+            for ( int i = 0; i < Behavior.History.Count; i++ )
             {
-                Behavior.History[i].Node.OnHistoryGUI();
+                Behavior.History[ i ].Node.OnHistoryGUI();
             }
         }
         GUI.changed = false;
@@ -190,7 +189,6 @@ public class AIPreviewWindow : EditorWindow
                     break;
             }
             GUIStyle style = new GUIStyle();
-            //style.fontStyle = FontStyle.Bold;
             style.fontStyle = FontStyle.BoldAndItalic;
             GUILayout.Label(prfx + Behavior.History[i].Name, style);
         }
@@ -209,7 +207,6 @@ public class AIPreviewWindow : EditorWindow
 
         GUILayout.BeginVertical();
         GUIStyle style = new GUIStyle();
-        //style.fontStyle = FontStyle.Bold;
         style.fontStyle = FontStyle.Bold;
         GUILayout.Label("Behavior Type: " + component.GetType().Name, style);
 
@@ -236,7 +233,6 @@ public class AIPreviewWindow : EditorWindow
             }
             else
             {
-
                 GUILayout.Label("Conditional Result: " + conditional.Result);
                 GUILayout.Label("Conditional Body: " + conditional.Expression);
                 GUILayout.Label("Conditional Not Using Action Constructor for Debugging");

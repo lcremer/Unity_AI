@@ -9,7 +9,8 @@ namespace BehaviorLibrary
     {
         Failure,
         Success,
-        Running
+        Running,
+        Dorment
     }
 
     public delegate Status BehaviorReturn();
