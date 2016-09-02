@@ -1,6 +1,8 @@
 #AI Behavior Tree Framework
 
-Create Behavior Trees in C#, No GUI. Preview behavior tree in realtime.
+NOTE: this is still very much a Prototype|Proof of Concept
+
+Create Behavior Trees in C#, without having to work with an editor. Preview behavior tree in realtime.
 I wanted something that would let me quickly define and create behavior tree nodes how I wanted, something fairly lightweight.
 This framework was an attempt to tackle that.
 
