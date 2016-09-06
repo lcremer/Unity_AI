@@ -5,10 +5,10 @@ namespace BehaviorLibrary
 {
     public abstract class  BehaviorComponent: ICloneable
     {
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         public BehaviorNode Node;
         public bool NotifyOnExecute;
-        #endif
+#endif
 
         public Action<BehaviorComponent> AddToHistory;
 
@@ -27,7 +27,7 @@ namespace BehaviorLibrary
             {
                 if (behaviorComponents[i] == null)
                 {
-                    Debug.Log("Something fucked up on iteration: " + i);
+                    Debug.Log("Error during iteration: " + i);
                 }
                 behaviors[i] = (BehaviorComponent)behaviorComponents[i].Clone();
             }

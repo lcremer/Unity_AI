@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace BehaviorLibary.Editor
 {
-    public class PreviewerEditorWindow : EditorWindow
+    public class PreviewEditorWindow : EditorWindow
     {
         public static BehaviorTree Behavior;
         private static List<BehaviorNode> nodes = new List<BehaviorNode>();
@@ -36,7 +36,7 @@ namespace BehaviorLibary.Editor
             y = 60;
             Behavior = behaviour;
             Behavior.BehaviorTreeUpdated = Launch;
-            GetWindow<PreviewerEditorWindow>().titleContent.text = "Behavior Tree Previewer";
+            GetWindow<PreviewEditorWindow>().titleContent.text = "Behavior Tree Previewer";
             GetNodes();
         }
 
@@ -111,7 +111,6 @@ namespace BehaviorLibary.Editor
                 {
                     nodes[ i ].OnGUI();
                 }
-
             }
 
             if ( Behavior != null && Behavior.UpdateAIPreviewer )

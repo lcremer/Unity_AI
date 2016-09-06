@@ -5,7 +5,7 @@ using BehaviorLibrary;
 namespace BehaviorLibary.Editor
 {
     [CustomPropertyDrawer( typeof( BehaviorTree ) )]
-    public class PreviewerPropertyDrawer : PropertyDrawer
+    public class PreviewPropertyDrawer : PropertyDrawer
     {
         public override void OnGUI( Rect position, SerializedProperty property, GUIContent label )
         {
@@ -19,7 +19,7 @@ namespace BehaviorLibary.Editor
                 BehaviorTree behavior = property.objectReferenceValue as BehaviorTree;
                 if ( behavior != null )
                 {
-                    PreviewerEditorWindow.Launch( behavior );
+                    PreviewEditorWindow.Launch( behavior );
                 }
                 else
                 {
