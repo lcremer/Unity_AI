@@ -51,9 +51,9 @@ namespace BehaviorLibrary
                 return this;
             }
 #if UNITY_EDITOR
-            behaviors = new[] {(BehaviorComponent) behavior.Clone()};
+            behaviors = new[] { (BehaviorComponent) behavior.Clone() };
 #else
-            behaviors = new[] {behavior};
+            behaviors = new[] { behavior };
 #endif
             //BehaviorTree.RefreshBehaviorTree();
             return this;

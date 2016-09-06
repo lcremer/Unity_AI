@@ -10,7 +10,7 @@ namespace BehaviorLibrary
         Failure,
         Success,
         Running,
-        Dormant // TODO: implement usage
+        Dormant // TODO: fully implement usage
     }
 
     public delegate Status BehaviorReturn();
@@ -27,17 +27,11 @@ namespace BehaviorLibrary
 
         public BehaviorComponent Root;
 
-        private Status returnCode;
-
-        public Status ReturnCode
-        {
-            get { return returnCode; }
-            set { returnCode = value; }
-        }
+        public Status CurrentStatus { get; set; }
 
         public BehaviorTree(BehaviorComponent root)
         {
-            Init( root );
+            Init(root);
         }
 
         public void Init(BehaviorComponent root)
@@ -45,7 +39,7 @@ namespace BehaviorLibrary
             Root = root;
             History = new List<BehaviorComponent>();
             AlterableComponents = new Dictionary<string, Alterable>();
-            SetupHistoryCallBackAndAlterable( Root );
+            SetupHistoryCallBackAndAlterable(Root);
         }
 
         public Status Behave()
@@ -55,32 +49,10 @@ namespace BehaviorLibrary
             {
                 RefreshBehaviorTree();
             }
-            UpdateAIPreviewer = false;
-            switch (Root.Execute())
-            {
-                case Status.Failure:
-                    ReturnCode = Status.Failure;
-                    UpdateAIPreviewer = true;
-                    break;
-                case Status.Success:
-                    ReturnCode = Status.Success;
-                    UpdateAIPreviewer = true;
-                    break;
-                case Status.Running:
-                    ReturnCode = Status.Running;
-                    UpdateAIPreviewer = true;
-                    break;
-                default:
-                    ReturnCode = Status.Running;
-                    UpdateAIPreviewer = true;
-                    break;
-            }
-            return ReturnCode;
+            return CurrentStatus = Root.Execute();
         }
 
-        // TODO: consider moving these into Behavior.Editor history object
-        public bool UpdateAIPreviewer;
-
+        // TODO: consider moving these into a Behavior.Editor history object
         private void AddToHistory(BehaviorComponent behaviorComponent)
         {
             History.Add(behaviorComponent);
@@ -113,13 +85,13 @@ namespace BehaviorLibrary
         {
             AlterableComponents.Clear();
             SetupHistoryCallBackAndAlterable(Root);
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
             if (BehaviorTreeUpdated != null)
             {
                 Debug.Log("Refreshing Tree");
                 BehaviorTreeUpdated(this);
             }
-            #endif
+#endif
         }
     }
 }
