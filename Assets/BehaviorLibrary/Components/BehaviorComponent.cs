@@ -21,7 +21,7 @@ namespace BehaviorLibrary
         protected BehaviorComponent AssignBehaviors(BehaviorComponent[] behaviorComponents)
         {
             // This is done to prevent previewer errors
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
             behaviors = new BehaviorComponent[behaviorComponents.Length];
             for (int i = 0; i < behaviorComponents.Length; i++)
             {
@@ -31,9 +31,9 @@ namespace BehaviorLibrary
                 }
                 behaviors[i] = (BehaviorComponent)behaviorComponents[i].Clone();
             }
-            #else
+#else
             behaviors = behaviors;
-            #endif
+#endif
             return this;
         }
 

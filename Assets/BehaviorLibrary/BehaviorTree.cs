@@ -10,7 +10,7 @@ namespace BehaviorLibrary
         Failure,
         Success,
         Running,
-        Dorment
+        Dormant // TODO: implement usage
     }
 
     public delegate Status BehaviorReturn();
@@ -34,8 +34,6 @@ namespace BehaviorLibrary
             get { return returnCode; }
             set { returnCode = value; }
         }
-
-        public bool UpdateAIPreviewer;
 
         public BehaviorTree(BehaviorComponent root)
         {
@@ -79,6 +77,9 @@ namespace BehaviorLibrary
             }
             return ReturnCode;
         }
+
+        // TODO: consider moving these into Behavior.Editor history object
+        public bool UpdateAIPreviewer;
 
         private void AddToHistory(BehaviorComponent behaviorComponent)
         {
