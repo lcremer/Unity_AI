@@ -3,7 +3,7 @@ using UnityEditor;
 
 namespace BehaviorLibrary
 {
-    // TODO: Move this into BehaviorLibary.Editor
+    // TODO: Move this into BehaviorLibrary.Editor
     public class BehaviorNode
     {
         public BehaviorComponent BehaviorComponent;
@@ -67,9 +67,9 @@ namespace BehaviorLibrary
         {
             switch (Event.current.type)
             {
-                case EventType.mouseDown:
+                case EventType.MouseDown:
                     break;
-                case EventType.mouseUp:
+                case EventType.MouseUp:
                     if (nodeRect.Contains(Event.current.mousePosition))
                     // Select this node if we clicked it
                     {
@@ -85,7 +85,7 @@ namespace BehaviorLibrary
                         Event.current.Use();
                     }
                     break;
-                case EventType.mouseDrag:
+                case EventType.MouseDrag:
                     //if (selection == this)
                     //// If doing a mouse drag with this component selected...
                     //{
@@ -93,7 +93,7 @@ namespace BehaviorLibrary
                     //    Event.current.Use();
                     //}
                     break;
-                case EventType.repaint:
+                case EventType.Repaint:
                     DrawBox( nodeRect, new Color(0.65f, 0.65f, 0.65f, .65f ));
                     GUIContent content = new GUIContent( BehaviorComponent.Name );
                     GUIStyle style = new GUIStyle();
@@ -131,9 +131,9 @@ namespace BehaviorLibrary
 
             switch (Event.current.type)
             {
-                case EventType.mouseDown:
+                case EventType.MouseDown:
                     break;
-                case EventType.mouseUp:
+                case EventType.MouseUp:
                     // Select this node if we clicked it
                     if ( nodeRect.Contains(Event.current.mousePosition))
                     {
@@ -149,7 +149,7 @@ namespace BehaviorLibrary
                         Event.current.Use();
                     }
                     break;
-                case EventType.mouseDrag:
+                case EventType.MouseDrag:
                     //if (selection == this)
                     //// If doing a mouse drag with this component selected...
                     //{
@@ -166,7 +166,7 @@ namespace BehaviorLibrary
                     //    }
                     //}
                     break;
-                case EventType.repaint:
+                case EventType.Repaint:
                     DrawBox(nodeRect, color);
                     GUIContent content = new GUIContent(BehaviorComponent.Name);
                     GUIStyle style = new GUIStyle();
@@ -226,15 +226,7 @@ namespace BehaviorLibrary
             if (material != null)
                 return;
 
-            material = new Material( "Shader \"Lines/Colored Blended\" {" +
-                                     "SubShader { Pass { " +
-                                     "    Blend SrcAlpha OneMinusSrcAlpha " +
-                                     "    ZWrite Off Cull Off Fog { Mode Off } " +
-                                     "    BindChannels {" +
-                                     "      Bind \"vertex\", vertex Bind \"color\", color }" +
-                                     "} } }" );
-            material.hideFlags = HideFlags.HideAndDontSave;
-            material.shader.hideFlags = HideFlags.HideAndDontSave;
+            material = new Material(Shader.Find("Lines/ColoredBlended"));
         }
 
         public static void DrawConnection(Vector2 from, Vector2 to, Color color)

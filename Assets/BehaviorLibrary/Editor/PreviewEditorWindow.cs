@@ -140,12 +140,12 @@ namespace BehaviorLibary.Editor
             // If we have a selection, we're doing an operation which requires an update each mouse move
             switch (Event.current.type)
             {
-                case EventType.mouseUp:
+                case EventType.MouseUp:
                     // If we had a mouse up event which was not handled by the nodes, clear our selection
                     BehaviorNode.Selection = null;
                     Event.current.Use();
                     break;
-                case EventType.mouseDown:
+                case EventType.MouseDown:
                     //if (Event.current.clickCount == 2)
                     //// If we double-click and no node handles the event, create a new node there
                     //{
@@ -288,7 +288,7 @@ namespace BehaviorLibary.Editor
 
         private void DrawGraphGUI()
         {
-            if (Event.current.type == EventType.repaint)
+            if (Event.current.type == EventType.Repaint)
             {
                 UnityEditor.Graphs.Styles.graphBackground.Draw(GraphRect, false, false, false, false);
                 DrawGrid();
@@ -297,7 +297,7 @@ namespace BehaviorLibary.Editor
 
         private void DrawGrid()
         {
-            if (Event.current.type != EventType.repaint)
+            if (Event.current.type != EventType.Repaint)
             {
                 return;
             }
